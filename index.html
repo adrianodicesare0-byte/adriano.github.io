@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach HIIT Personal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="welcomeMessage">Coach HIIT Personal</h1>
+        
+        <div class="main-controls">
+            <div class="time-inputs">
+                <div class="input-group">
+                    <label for="workTime">Entrenar (seg)</label><input type="number" id="workTime" value="30">
+                </div>
+                <div class="input-group">
+                    <label for="restTime">Descanso (seg)</label><input type="number" id="restTime" value="10">
+                </div>
+                <div class="input-group">
+                    <label for="totalRounds">Rondas</label><input type="number" id="totalRounds" value="8">
+                </div>
+            </div>
+            <div class="input-group" style="flex-grow: 1;">
+                <label for="exerciseList">Ejercicios (uno por línea)</label>
+                <textarea id="exerciseList">Flexiones de brazos...</textarea>
+            </div>
+        </div>
+
+        <div id="currentExercise">¡Prepárate!</div>
+        <div id="status">Presiona Empezar</div>
+        <div id="timer">00:00</div>
+        <div id="rounds">&nbsp;</div>
+        <div class="progress-bar-container"><div id="progressBar"></div></div>
+
+        <div class="buttons">
+            <button id="startBtn" style="background-color: var(--rest-color);">Empezar</button>
+            <button id="pauseBtn" style="background-color: var(--prepare-color);">Pausa</button>
+            <button id="resetBtn" style="background-color: var(--work-color);">Reset</button>
+        </div>
+
+        <div class="music-controls">
+            <label for="musicSelect">Música:</label>
+            <select id="musicSelect">
+                <option value="none">Sin Música</option>
+                <option value="track1">Electro Workout</option>
+                <option value="track2">Power Rock</option>
+            </select>
+            <label for="volumeSlider">Volumen:</label>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+
+        <div class="storage-controls">
+            <input type="text" id="routineName" placeholder="Nombre de la rutina...">
+            <button id="saveBtn">Guardar</button>
+            <select id="routineSelect"><option>Cargar rutina...</option></select>
+            <button id="deleteBtn">Borrar</button>
+        </div>
+
+        <div class="settings">
+            <input type="text" id="userName" placeholder="Tu nombre...">
+            <select id="voiceSelect"><option>Voz por defecto</option></select>
+            <div class="theme-switch">
+                <label class="toggle">
+                    <input class="toggle-checkbox" type="checkbox" id="themeToggle">
+                    <div class="toggle-switch"></div>
+                </label>
+                <span>Modo Claro</span>
+            </div>
+        </div>
+        
+        <div class="log">
+            <h3>Últimos Entrenamientos</h3>
+            <ul id="logList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
